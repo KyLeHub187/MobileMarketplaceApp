@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileMarketplace app", "MobileMarketplace app\MobileMarketplace app.csproj", "{B5A50C92-08F5-4109-8A17-E2BDCF6F5AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A50C92-08F5-4109-8A17-E2BDCF6F5AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A50C92-08F5-4109-8A17-E2BDCF6F5AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A50C92-08F5-4109-8A17-E2BDCF6F5AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A50C92-08F5-4109-8A17-E2BDCF6F5AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B629E8D9-CE39-4372-977E-CB4734B069D7}
+	EndGlobalSection
+EndGlobal
