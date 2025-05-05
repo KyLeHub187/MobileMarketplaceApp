@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace MobileMarketplace_app
 {
-    public partial class signupControl : UserControl
+    public partial class homeControl : UserControl
     {
-        public signupControl()
+        public homeControl()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-
-            2
         }
     }
 }
