@@ -72,11 +72,13 @@ namespace MobileMarketplace_app
                                 UserSession.Username = reader["Username"].ToString();
                                 UserSession.Email = reader["Email"].ToString();
                                 UserSession.Role = reader["Role"]?.ToString();
+                                UserSession.FirstName = reader["FirstName"].ToString();
 
 
-                                // Redirect to main form
                                 this.Hide();
-                                new mainForm().Show();
+                                var main = new mainForm();
+                                main.Show();
+                                main.LoadControl(new homeControl());
                             }
                             else
                             {
@@ -91,5 +93,6 @@ namespace MobileMarketplace_app
                 }
             }
         }
+
     }
 }

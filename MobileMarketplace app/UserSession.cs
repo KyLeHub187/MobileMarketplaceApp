@@ -12,6 +12,7 @@ namespace MobileMarketplace_app
         public static string Username { get; set; }
         public static string Email { get; set; }
         public static string Role { get; set; } // Optional, if you store roles
+        public static string FirstName { get; set; }
 
         public static void Clear()
         {

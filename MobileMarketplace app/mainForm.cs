@@ -12,9 +12,21 @@ namespace MobileMarketplace_app
 {
     public partial class mainForm : Form
     {
+
+
+
         public mainForm()
         {
             InitializeComponent();
         }
+
+        public void LoadControl(UserControl control)
+
+        {
+            mainPanel.Controls.Clear(); // Clear previous control
+            control.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(control);
+        }
+
     }
 }

@@ -36,7 +36,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manPanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             this.accountToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(1324, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(87, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(85, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -105,21 +105,21 @@
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.accountToolStripMenuItem.Text = "Account";
             // 
-            // manPanel
+            // mainPanel
             // 
-            this.manPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manPanel.Location = new System.Drawing.Point(0, 28);
-            this.manPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.manPanel.Name = "manPanel";
-            this.manPanel.Size = new System.Drawing.Size(1540, 818);
-            this.manPanel.TabIndex = 2;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 28);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1540, 818);
+            this.mainPanel.TabIndex = 2;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 846);
-            this.Controls.Add(this.manPanel);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -145,7 +145,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
-        private System.Windows.Forms.Panel manPanel;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 

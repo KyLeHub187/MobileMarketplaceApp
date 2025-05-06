@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="DeviceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeviceCard.Designer.cs">
+      <DependentUpon>DeviceCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="homeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <DependentUpon>signupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="DeviceCard.resx">
+      <DependentUpon>DeviceCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homeControl.resx">
       <DependentUpon>homeControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
