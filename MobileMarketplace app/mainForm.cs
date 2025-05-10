@@ -12,21 +12,33 @@ namespace MobileMarketplace_app
 {
     public partial class mainForm : Form
     {
-
+        homeControl home;
+        shopControl shopAllDevices;
 
 
         public mainForm()
         {
             InitializeComponent();
+            home = new homeControl();
+            shopAllDevices = new shopControl();
+
+            mainPanel.Controls.Add(home);
+            mainPanel.Controls.Add(shopAllDevices);
+
+            home.Dock = DockStyle.Fill;
+            shopAllDevices.Dock = DockStyle.Fill;
+
+            home.BringToFront(); // Show home control first
         }
-
-        public void LoadControl(UserControl control)
-
+       
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear(); // Clear previous control
-            control.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(control);
+            home.BringToFront();
         }
 
+        private void shopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            shopAllDevices.BringToFront();
+        }
     }
 }

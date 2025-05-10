@@ -33,20 +33,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelUsernameShadow = new System.Windows.Forms.Panel();
             this.panelUsernameInput = new System.Windows.Forms.Panel();
+            this.pbUsernameIcon = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSignup = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pbUsernameIcon = new System.Windows.Forms.PictureBox();
             this.pbShown = new System.Windows.Forms.PictureBox();
             this.pbHidden = new System.Windows.Forms.PictureBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelUsernameInput.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsernameIcon)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbShown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHidden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -101,7 +101,18 @@
             this.panelUsernameInput.Name = "panelUsernameInput";
             this.panelUsernameInput.Padding = new System.Windows.Forms.Padding(25, 2, 3, 2);
             this.panelUsernameInput.Size = new System.Drawing.Size(197, 25);
-            this.panelUsernameInput.TabIndex = 0;
+            this.panelUsernameInput.TabIndex = 1;
+            // 
+            // pbUsernameIcon
+            // 
+            this.pbUsernameIcon.Image = global::MobileMarketplace_app.Properties.Resources.user;
+            this.pbUsernameIcon.Location = new System.Drawing.Point(1, 2);
+            this.pbUsernameIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.pbUsernameIcon.Name = "pbUsernameIcon";
+            this.pbUsernameIcon.Size = new System.Drawing.Size(21, 20);
+            this.pbUsernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUsernameIcon.TabIndex = 0;
+            this.pbUsernameIcon.TabStop = false;
             // 
             // txtUsername
             // 
@@ -110,7 +121,7 @@
             this.txtUsername.Location = new System.Drawing.Point(25, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(169, 15);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 0;
             // 
             // label3
             // 
@@ -127,7 +138,7 @@
             this.btnLogin.Location = new System.Drawing.Point(343, 260);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 7;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -154,37 +165,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(25, 2, 3, 2);
             this.panel2.Size = new System.Drawing.Size(197, 25);
-            this.panel2.TabIndex = 10;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPassword.Location = new System.Drawing.Point(25, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(169, 15);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panel3.Location = new System.Drawing.Point(233, 190);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(197, 25);
-            this.panel3.TabIndex = 11;
-            // 
-            // pbUsernameIcon
-            // 
-            this.pbUsernameIcon.Image = global::MobileMarketplace_app.Properties.Resources.user;
-            this.pbUsernameIcon.Location = new System.Drawing.Point(1, 2);
-            this.pbUsernameIcon.Margin = new System.Windows.Forms.Padding(4);
-            this.pbUsernameIcon.Name = "pbUsernameIcon";
-            this.pbUsernameIcon.Size = new System.Drawing.Size(21, 20);
-            this.pbUsernameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUsernameIcon.TabIndex = 0;
-            this.pbUsernameIcon.TabStop = false;
+            this.panel2.TabIndex = 2;
             // 
             // pbShown
             // 
@@ -209,6 +190,16 @@
             this.pbHidden.TabStop = false;
             this.pbHidden.Click += new System.EventHandler(this.pbHidden_Click);
             // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPassword.Location = new System.Drawing.Point(25, 2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(169, 15);
+            this.txtPassword.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MobileMarketplace_app.Properties.Resources.locked_computer;
@@ -219,6 +210,15 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panel3.Location = new System.Drawing.Point(233, 190);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(197, 25);
+            this.panel3.TabIndex = 6;
             // 
             // loginForm
             // 
@@ -243,9 +243,9 @@
             this.TransparencyKey = System.Drawing.Color.Red;
             this.panelUsernameInput.ResumeLayout(false);
             this.panelUsernameInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsernameIcon)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsernameIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHidden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

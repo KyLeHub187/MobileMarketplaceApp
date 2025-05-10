@@ -78,7 +78,7 @@ namespace MobileMarketplace_app
                                 this.Hide();
                                 var main = new mainForm();
                                 main.Show();
-                                main.LoadControl(new homeControl());
+                                homeControl home = new homeControl();
                             }
                             else
                             {

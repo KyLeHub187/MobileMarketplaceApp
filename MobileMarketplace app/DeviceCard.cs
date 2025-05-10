@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using MobileMarketplace_app.Models;   // make sure you have this
 
 namespace MobileMarketplace_app
 {
@@ -15,6 +12,25 @@ namespace MobileMarketplace_app
         public deviceCard()
         {
             InitializeComponent();
+        }
+
+        // ← here's your new constructor for Option B
+        public deviceCard(Device d) : this()
+        {
+            // bind the Device fields into your labels/picture
+            Brand = d.Brand;
+            Model = d.Model;
+            Price = d.Price.ToString("C");
+            Condition = d.Condition;
+            DateAdded = d.CreatedDate.ToShortDateString();
+
+            this.Margin = new Padding(10);
+
+            // load the image if it exists
+            if (!string.IsNullOrEmpty(d.FirstImagePath) && File.Exists(d.FirstImagePath))
+                DeviceImage = Image.FromFile(d.FirstImagePath);
+            else
+                DeviceImage = null;
         }
 
         public Image DeviceImage
@@ -52,24 +68,21 @@ namespace MobileMarketplace_app
             get => lblDateAdded.Text;
             set => lblDateAdded.Text = value;
         }
+
+        // you can leave SetData(DataRow) in place if you ever want DataRow-based binding
         public void SetData(DataRow row)
         {
             Brand = row["Brand"].ToString();
             Model = row["Model"].ToString();
             Price = $"${row["Price"]}";
             Condition = row["Condition"].ToString();
-            DateAdded = Convert.ToDateTime(row["CreatedDate"]).ToShortDateString();
+            DateAdded = Convert.ToDateTime(row["CreatedDate"])
+                               .ToShortDateString();
 
-            string imagePath = row["ImagePath"].ToString();
-            if (!string.IsNullOrEmpty(imagePath) && System.IO.File.Exists(imagePath))
-            {
-                DeviceImage = Image.FromFile(imagePath);
-            }
-            else
-            {
-                DeviceImage = null;
-            }
+            var path = row["ImagePath"].ToString();
+            DeviceImage = (!string.IsNullOrEmpty(path) && File.Exists(path))
+                          ? Image.FromFile(path)
+                          : null;
         }
     }
-
 }
