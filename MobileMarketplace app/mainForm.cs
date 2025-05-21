@@ -14,6 +14,7 @@ namespace MobileMarketplace_app
     {
         homeControl home;
         shopControl shopAllDevices;
+        SellControl Sell;
 
 
         public mainForm()
@@ -21,12 +22,17 @@ namespace MobileMarketplace_app
             InitializeComponent();
             home = new homeControl();
             shopAllDevices = new shopControl();
+            Sell = new SellControl();
+
 
             mainPanel.Controls.Add(home);
             mainPanel.Controls.Add(shopAllDevices);
+            mainPanel.Controls.Add(Sell);
+
 
             home.Dock = DockStyle.Fill;
             shopAllDevices.Dock = DockStyle.Fill;
+            Sell.Dock = DockStyle.Fill;
 
             home.BringToFront(); // Show home control first
         }
@@ -39,6 +45,11 @@ namespace MobileMarketplace_app
         private void shopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             shopAllDevices.BringToFront();
+        }
+
+        private void sellToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sell.BringToFront();
         }
     }
 }

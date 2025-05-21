@@ -51,29 +51,30 @@
             this.chatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1540, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1540, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // shopToolStripMenuItem
             // 
             this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
             this.shopToolStripMenuItem.Text = "Shop";
             this.shopToolStripMenuItem.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
             // 
             // sellToolStripMenuItem
             // 
             this.sellToolStripMenuItem.Name = "sellToolStripMenuItem";
-            this.sellToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.sellToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
             this.sellToolStripMenuItem.Text = "Sell";
+            this.sellToolStripMenuItem.Click += new System.EventHandler(this.sellToolStripMenuItem_Click);
             // 
             // chatToolStripMenuItem
             // 
@@ -81,7 +82,7 @@
             this.toolStripSeparator1});
             this.chatToolStripMenuItem.Name = "chatToolStripMenuItem";
             this.chatToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chatToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.chatToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.chatToolStripMenuItem.Text = "Chat";
             // 
             // toolStripSeparator1
@@ -97,23 +98,23 @@
             this.accountToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(1324, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(85, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(87, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 28);
+            this.mainPanel.Location = new System.Drawing.Point(0, 30);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1540, 818);
+            this.mainPanel.Size = new System.Drawing.Size(1540, 816);
             this.mainPanel.TabIndex = 2;
             // 
             // mainForm
