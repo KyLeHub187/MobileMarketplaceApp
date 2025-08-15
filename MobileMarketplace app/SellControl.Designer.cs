@@ -34,24 +34,22 @@
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnListDevice = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblImages = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbDeviceImage1 = new System.Windows.Forms.PictureBox();
+            this.pbDeviceImage2 = new System.Windows.Forms.PictureBox();
+            this.pbDeviceImage3 = new System.Windows.Forms.PictureBox();
+            this.pbDeviceImage4 = new System.Windows.Forms.PictureBox();
+            this.pbDeviceImage5 = new System.Windows.Forms.PictureBox();
             this.pbInfo = new System.Windows.Forms.PictureBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbCondition = new System.Windows.Forms.ComboBox();
+            this.cmbStorage = new System.Windows.Forms.ComboBox();
+            this.cmbColor = new System.Windows.Forms.ComboBox();
             this.lblDollarSign = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.cmbModel = new System.Windows.Forms.ComboBox();
             this.cmbBrand = new System.Windows.Forms.ComboBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -71,24 +69,28 @@
             this.btnChangeOS = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlDeviceType = new System.Windows.Forms.Panel();
             this.btnTablet = new System.Windows.Forms.Button();
             this.lblTablet = new System.Windows.Forms.Label();
             this.lblSelectDeviceType = new System.Windows.Forms.Label();
             this.btnPhone = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
+            this.pbCheckMark = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCheckMark2 = new System.Windows.Forms.PictureBox();
             this.pnlSell.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.pnlOS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlDeviceType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckMark)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckMark2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblList
@@ -103,24 +105,22 @@
             // 
             // pnlSell
             // 
-            this.pnlSell.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlSell.BackColor = System.Drawing.Color.White;
             this.pnlSell.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSell.Controls.Add(this.txtBrand);
             this.pnlSell.Controls.Add(this.txtModel);
             this.pnlSell.Controls.Add(this.button2);
-            this.pnlSell.Controls.Add(this.button1);
-            this.pnlSell.Controls.Add(this.btnBack);
+            this.pnlSell.Controls.Add(this.btnListDevice);
             this.pnlSell.Controls.Add(this.textBox1);
             this.pnlSell.Controls.Add(this.lblDescription);
             this.pnlSell.Controls.Add(this.lblImages);
             this.pnlSell.Controls.Add(this.flowLayoutPanel1);
             this.pnlSell.Controls.Add(this.pbInfo);
-            this.pnlSell.Controls.Add(this.comboBox5);
-            this.pnlSell.Controls.Add(this.comboBox4);
-            this.pnlSell.Controls.Add(this.comboBox3);
+            this.pnlSell.Controls.Add(this.cmbCondition);
+            this.pnlSell.Controls.Add(this.cmbStorage);
+            this.pnlSell.Controls.Add(this.cmbColor);
             this.pnlSell.Controls.Add(this.lblDollarSign);
             this.pnlSell.Controls.Add(this.txtPrice);
-            this.pnlSell.Controls.Add(this.cmbModel);
             this.pnlSell.Controls.Add(this.cmbBrand);
             this.pnlSell.Controls.Add(this.lblModel);
             this.pnlSell.Controls.Add(this.lblPrice);
@@ -134,7 +134,6 @@
             this.pnlSell.Name = "pnlSell";
             this.pnlSell.Size = new System.Drawing.Size(1000, 691);
             this.pnlSell.TabIndex = 8;
-            this.pnlSell.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSell_Paint);
             // 
             // txtBrand
             // 
@@ -146,48 +145,39 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(281, 488);
+            this.txtModel.Location = new System.Drawing.Point(154, 488);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(100, 22);
+            this.txtModel.Size = new System.Drawing.Size(121, 22);
             this.txtModel.TabIndex = 26;
-            this.txtModel.Visible = false;
             // 
             // button2
             // 
             this.button2.AutoSize = true;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(162, 629);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 33);
+            this.button2.Size = new System.Drawing.Size(144, 35);
             this.button2.TabIndex = 25;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnListDevice
             // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(539, 629);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 33);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "List Device";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Image = global::MobileMarketplace_app.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(20, 15);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(20, 15, 3, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(118, 68);
-            this.btnBack.TabIndex = 23;
-            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnListDevice.AutoSize = true;
+            this.btnListDevice.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnListDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListDevice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListDevice.ForeColor = System.Drawing.Color.Black;
+            this.btnListDevice.Location = new System.Drawing.Point(539, 629);
+            this.btnListDevice.Name = "btnListDevice";
+            this.btnListDevice.Size = new System.Drawing.Size(144, 35);
+            this.btnListDevice.TabIndex = 24;
+            this.btnListDevice.Text = "List Device";
+            this.btnListDevice.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -221,11 +211,11 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox5);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox6);
+            this.flowLayoutPanel1.Controls.Add(this.pbDeviceImage1);
+            this.flowLayoutPanel1.Controls.Add(this.pbDeviceImage2);
+            this.flowLayoutPanel1.Controls.Add(this.pbDeviceImage3);
+            this.flowLayoutPanel1.Controls.Add(this.pbDeviceImage4);
+            this.flowLayoutPanel1.Controls.Add(this.pbDeviceImage5);
             this.flowLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(205, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -234,53 +224,53 @@
             this.flowLayoutPanel1.TabIndex = 19;
             this.flowLayoutPanel1.WrapContents = false;
             // 
-            // pictureBox2
+            // pbDeviceImage1
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 200);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pbDeviceImage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbDeviceImage1.Location = new System.Drawing.Point(13, 6);
+            this.pbDeviceImage1.Name = "pbDeviceImage1";
+            this.pbDeviceImage1.Size = new System.Drawing.Size(125, 200);
+            this.pbDeviceImage1.TabIndex = 0;
+            this.pbDeviceImage1.TabStop = false;
             // 
-            // pictureBox3
+            // pbDeviceImage2
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(149, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(125, 200);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.pbDeviceImage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbDeviceImage2.Location = new System.Drawing.Point(149, 6);
+            this.pbDeviceImage2.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.pbDeviceImage2.Name = "pbDeviceImage2";
+            this.pbDeviceImage2.Size = new System.Drawing.Size(125, 200);
+            this.pbDeviceImage2.TabIndex = 1;
+            this.pbDeviceImage2.TabStop = false;
             // 
-            // pictureBox4
+            // pbDeviceImage3
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(285, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(125, 200);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.pbDeviceImage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbDeviceImage3.Location = new System.Drawing.Point(285, 6);
+            this.pbDeviceImage3.Name = "pbDeviceImage3";
+            this.pbDeviceImage3.Size = new System.Drawing.Size(125, 200);
+            this.pbDeviceImage3.TabIndex = 2;
+            this.pbDeviceImage3.TabStop = false;
             // 
-            // pictureBox5
+            // pbDeviceImage4
             // 
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(421, 6);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(125, 200);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.pbDeviceImage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbDeviceImage4.Location = new System.Drawing.Point(421, 6);
+            this.pbDeviceImage4.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
+            this.pbDeviceImage4.Name = "pbDeviceImage4";
+            this.pbDeviceImage4.Size = new System.Drawing.Size(125, 200);
+            this.pbDeviceImage4.TabIndex = 3;
+            this.pbDeviceImage4.TabStop = false;
             // 
-            // pictureBox6
+            // pbDeviceImage5
             // 
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(557, 6);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.pictureBox6.Size = new System.Drawing.Size(125, 200);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.pbDeviceImage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbDeviceImage5.Location = new System.Drawing.Point(557, 6);
+            this.pbDeviceImage5.Name = "pbDeviceImage5";
+            this.pbDeviceImage5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.pbDeviceImage5.Size = new System.Drawing.Size(125, 200);
+            this.pbDeviceImage5.TabIndex = 4;
+            this.pbDeviceImage5.TabStop = false;
             // 
             // pbInfo
             // 
@@ -291,35 +281,35 @@
             this.pbInfo.TabIndex = 18;
             this.pbInfo.TabStop = false;
             // 
-            // comboBox5
+            // cmbCondition
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(472, 422);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
-            this.comboBox5.TabIndex = 17;
+            this.cmbCondition.FormattingEnabled = true;
+            this.cmbCondition.Location = new System.Drawing.Point(472, 422);
+            this.cmbCondition.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
+            this.cmbCondition.Name = "cmbCondition";
+            this.cmbCondition.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbCondition.Size = new System.Drawing.Size(121, 24);
+            this.cmbCondition.TabIndex = 17;
             // 
-            // comboBox4
+            // cmbStorage
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(472, 485);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 16;
+            this.cmbStorage.FormattingEnabled = true;
+            this.cmbStorage.Location = new System.Drawing.Point(472, 485);
+            this.cmbStorage.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
+            this.cmbStorage.Name = "cmbStorage";
+            this.cmbStorage.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbStorage.Size = new System.Drawing.Size(121, 24);
+            this.cmbStorage.TabIndex = 16;
             // 
-            // comboBox3
+            // cmbColor
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(472, 554);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 15;
+            this.cmbColor.FormattingEnabled = true;
+            this.cmbColor.Location = new System.Drawing.Point(472, 554);
+            this.cmbColor.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
+            this.cmbColor.Name = "cmbColor";
+            this.cmbColor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbColor.Size = new System.Drawing.Size(121, 24);
+            this.cmbColor.TabIndex = 15;
             // 
             // lblDollarSign
             // 
@@ -337,16 +327,6 @@
             this.txtPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPrice.Size = new System.Drawing.Size(100, 22);
             this.txtPrice.TabIndex = 12;
-            // 
-            // cmbModel
-            // 
-            this.cmbModel.FormattingEnabled = true;
-            this.cmbModel.Location = new System.Drawing.Point(154, 488);
-            this.cmbModel.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
-            this.cmbModel.Name = "cmbModel";
-            this.cmbModel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbModel.Size = new System.Drawing.Size(121, 24);
-            this.cmbModel.TabIndex = 11;
             // 
             // cmbBrand
             // 
@@ -429,13 +409,17 @@
             // 
             // btnUpload
             // 
+            this.btnUpload.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.ForeColor = System.Drawing.Color.Black;
             this.btnUpload.Location = new System.Drawing.Point(42, 283);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(137, 29);
             this.btnUpload.TabIndex = 1;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lblOS
             // 
@@ -451,10 +435,13 @@
             // btnAndroid
             // 
             this.btnAndroid.AutoSize = true;
+            this.btnAndroid.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAndroid.ForeColor = System.Drawing.Color.Black;
             this.btnAndroid.Location = new System.Drawing.Point(15, 177);
             this.btnAndroid.Name = "btnAndroid";
-            this.btnAndroid.Size = new System.Drawing.Size(132, 30);
+            this.btnAndroid.Size = new System.Drawing.Size(132, 32);
             this.btnAndroid.TabIndex = 10;
             this.btnAndroid.Text = "Android";
             this.btnAndroid.UseVisualStyleBackColor = true;
@@ -462,10 +449,13 @@
             // btnIOS
             // 
             this.btnIOS.AutoSize = true;
+            this.btnIOS.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnIOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIOS.ForeColor = System.Drawing.Color.Black;
             this.btnIOS.Location = new System.Drawing.Point(151, 177);
             this.btnIOS.Name = "btnIOS";
-            this.btnIOS.Size = new System.Drawing.Size(132, 30);
+            this.btnIOS.Size = new System.Drawing.Size(132, 32);
             this.btnIOS.TabIndex = 11;
             this.btnIOS.Text = "IOS";
             this.btnIOS.UseVisualStyleBackColor = true;
@@ -477,18 +467,19 @@
             this.cmbOS.Name = "cmbOS";
             this.cmbOS.Size = new System.Drawing.Size(132, 24);
             this.cmbOS.TabIndex = 12;
+            this.cmbOS.SelectedIndexChanged += new System.EventHandler(this.cmbOS_SelectedIndexChanged);
             this.cmbOS.Visible = false;
-            this.cmbOS.SelectedIndexChanged += new System.EventHandler(this.cmbOS_SelectedIndexChanged_1);
             // 
             // pnlOS
             // 
+            this.pnlOS.BackColor = System.Drawing.Color.White;
             this.pnlOS.Controls.Add(this.btnNext);
             this.pnlOS.Controls.Add(this.btnChangeDeviceType);
             this.pnlOS.Controls.Add(this.lblOS);
             this.pnlOS.Controls.Add(this.btnIOS);
             this.pnlOS.Controls.Add(this.btnChangeOS);
-            this.pnlOS.Controls.Add(this.cmbOS);
             this.pnlOS.Controls.Add(this.btnAndroid);
+            this.pnlOS.Controls.Add(this.cmbOS);
             this.pnlOS.Location = new System.Drawing.Point(50, 375);
             this.pnlOS.Name = "pnlOS";
             this.pnlOS.Size = new System.Drawing.Size(299, 249);
@@ -497,19 +488,24 @@
             // btnNext
             // 
             this.btnNext.AutoSize = true;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.Location = new System.Drawing.Point(80, 212);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(132, 30);
+            this.btnNext.Size = new System.Drawing.Size(132, 32);
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnChangeDeviceType
             // 
             this.btnChangeDeviceType.AutoSize = true;
+            this.btnChangeDeviceType.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnChangeDeviceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeDeviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeDeviceType.ForeColor = System.Drawing.Color.Black;
             this.btnChangeDeviceType.Location = new System.Drawing.Point(51, 23);
             this.btnChangeDeviceType.Name = "btnChangeDeviceType";
             this.btnChangeDeviceType.Size = new System.Drawing.Size(176, 33);
@@ -528,7 +524,6 @@
             this.btnChangeOS.Text = "Change OS";
             this.btnChangeOS.UseVisualStyleBackColor = true;
             this.btnChangeOS.Visible = false;
-            this.btnChangeOS.Click += new System.EventHandler(this.btnChangeOS_Click);
             // 
             // toolTip1
             // 
@@ -543,20 +538,9 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::MobileMarketplace_app.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlDeviceType
             // 
+            this.pnlDeviceType.BackColor = System.Drawing.Color.White;
             this.pnlDeviceType.Controls.Add(this.btnTablet);
             this.pnlDeviceType.Controls.Add(this.lblTablet);
             this.pnlDeviceType.Controls.Add(this.lblSelectDeviceType);
@@ -571,7 +555,7 @@
             // 
             this.btnTablet.BackColor = System.Drawing.SystemColors.Control;
             this.btnTablet.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnTablet.Image = global::MobileMarketplace_app.Properties.Resources.tablet;
+            this.btnTablet.Image = global::MobileMarketplace_app.Properties.Resources.tablett;
             this.btnTablet.Location = new System.Drawing.Point(210, 93);
             this.btnTablet.Name = "btnTablet";
             this.btnTablet.Size = new System.Drawing.Size(50, 50);
@@ -603,7 +587,7 @@
             // 
             this.btnPhone.BackColor = System.Drawing.SystemColors.Control;
             this.btnPhone.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnPhone.Image = global::MobileMarketplace_app.Properties.Resources.mobile_phone2;
+            this.btnPhone.Image = global::MobileMarketplace_app.Properties.Resources.smartphone;
             this.btnPhone.Location = new System.Drawing.Point(37, 93);
             this.btnPhone.Name = "btnPhone";
             this.btnPhone.Size = new System.Drawing.Size(50, 50);
@@ -620,31 +604,70 @@
             this.lblPhone.TabIndex = 14;
             this.lblPhone.Text = "Phone";
             // 
+            // pbCheckMark
+            // 
+            this.pbCheckMark.Image = global::MobileMarketplace_app.Properties.Resources.check;
+            this.pbCheckMark.Location = new System.Drawing.Point(101, 174);
+            this.pbCheckMark.Name = "pbCheckMark";
+            this.pbCheckMark.Size = new System.Drawing.Size(180, 180);
+            this.pbCheckMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCheckMark.TabIndex = 17;
+            this.pbCheckMark.TabStop = false;
+            this.pbCheckMark.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = global::MobileMarketplace_app.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(350, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbCheckMark2
+            // 
+            this.pbCheckMark2.Image = global::MobileMarketplace_app.Properties.Resources.check;
+            this.pbCheckMark2.Location = new System.Drawing.Point(101, 408);
+            this.pbCheckMark2.Name = "pbCheckMark2";
+            this.pbCheckMark2.Size = new System.Drawing.Size(180, 180);
+            this.pbCheckMark2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCheckMark2.TabIndex = 18;
+            this.pbCheckMark2.TabStop = false;
+            this.pbCheckMark2.Visible = false;
+            // 
             // SellControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.pnlDeviceType);
-            this.Controls.Add(this.pnlOS);
             this.Controls.Add(this.pnlSell);
             this.Controls.Add(this.lblList);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCheckMark);
+            this.Controls.Add(this.pnlOS);
+            this.Controls.Add(this.pbCheckMark2);
             this.Name = "SellControl";
             this.Size = new System.Drawing.Size(1540, 818);
             this.pnlSell.ResumeLayout(false);
             this.pnlSell.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDeviceImage5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             this.pnlOS.ResumeLayout(false);
             this.pnlOS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlDeviceType.ResumeLayout(false);
             this.pnlDeviceType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckMark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckMark2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,35 +694,35 @@
         private System.Windows.Forms.Label lblStorage;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblBrand;
-        private System.Windows.Forms.ComboBox cmbModel;
         private System.Windows.Forms.ComboBox cmbBrand;
         private System.Windows.Forms.Label lblDollarSign;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbCondition;
+        private System.Windows.Forms.ComboBox cmbStorage;
+        private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.PictureBox pbInfo;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pbDeviceImage1;
+        private System.Windows.Forms.PictureBox pbDeviceImage2;
+        private System.Windows.Forms.PictureBox pbDeviceImage3;
+        private System.Windows.Forms.PictureBox pbDeviceImage4;
+        private System.Windows.Forms.PictureBox pbDeviceImage5;
         private System.Windows.Forms.Label lblImages;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel pnlDeviceType;
-        private System.Windows.Forms.Button btnTablet;
         private System.Windows.Forms.Label lblTablet;
         private System.Windows.Forms.Label lblSelectDeviceType;
         private System.Windows.Forms.Button btnPhone;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListDevice;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.Button btnTablet;
+        private System.Windows.Forms.PictureBox pbCheckMark;
+        private System.Windows.Forms.PictureBox pbCheckMark2;
     }
 }

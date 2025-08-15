@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblType = new System.Windows.Forms.Label();
             this.cmbType = new System.Windows.Forms.ComboBox();
@@ -56,7 +55,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lblPage = new System.Windows.Forms.Label();
             this.btnClearFilters = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,17 +65,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(207, 22);
             this.txtSearch.TabIndex = 2;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::MobileMarketplace_app.Properties.Resources.loupe;
-            this.btnSearch.Location = new System.Drawing.Point(266, 715);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(22, 22);
-            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.TabStop = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // pictureBox1
             // 
@@ -323,6 +311,7 @@
             // flpDevices
             // 
             this.flpDevices.AutoScroll = true;
+            this.flpDevices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.flpDevices.Location = new System.Drawing.Point(400, 100);
             this.flpDevices.Name = "flpDevices";
             this.flpDevices.Size = new System.Drawing.Size(900, 600);
@@ -367,10 +356,20 @@
             this.btnClearFilters.UseVisualStyleBackColor = true;
             this.btnClearFilters.Click += new System.EventHandler(this.btnClearFilters_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(267, 715);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(111, 30);
+            this.btnSearch.TabIndex = 30;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // shopControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnClearFilters);
             this.Controls.Add(this.lblPage);
             this.Controls.Add(this.btnNext);
@@ -396,13 +395,11 @@
             this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.lblType);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Name = "shopControl";
             this.Size = new System.Drawing.Size(1540, 818);
             this.Load += new System.EventHandler(this.shopControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -413,7 +410,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.ComboBox cmbCondition;
@@ -439,5 +435,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblPage;
         private System.Windows.Forms.Button btnClearFilters;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

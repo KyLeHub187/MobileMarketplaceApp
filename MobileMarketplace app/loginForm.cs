@@ -71,7 +71,7 @@ namespace MobileMarketplace_app
                                 UserSession.UserId = Convert.ToInt32(reader["UserId"]);
                                 UserSession.Username = reader["Username"].ToString();
                                 UserSession.Email = reader["Email"].ToString();
-                                UserSession.Role = reader["Role"]?.ToString();
+                                UserSession.Gender = reader["Role"]?.ToString();
                                 UserSession.FirstName = reader["FirstName"].ToString();
 
 

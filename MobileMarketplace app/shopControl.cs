@@ -30,40 +30,166 @@ namespace MobileMarketplace_app
         {
             InitializeComponent();
 
-            // Hook up Load event so we start pulling data as soon as the control is shown
+            // ———————————
+            // 1) Load + Search Wiring
+            // ———————————
             this.Load += shopControl_Load;
-            btnSearch.Click += (s, e) => ApplyFilters();
-            // NEW: fire ApplyFilters() when the user presses Enter in txtSearch
+
+
+            btnSearch.Click += (s, e) =>
+            {
+                ApplyFilters();
+            };
+
             txtSearch.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
                 {
                     ApplyFilters();
-                    // Optionally suppress the "ding" sound
-                    e.SuppressKeyPress = true;
+                    e.SuppressKeyPress = true; // prevent ding sound
                 }
             };
 
-            // Make the filter ComboBoxes more readable and give them placeholders
-            var bigFont = new Font("Segoe UI", 12F, FontStyle.Regular);
-            cmbType.Font = bigFont;
-            cmbOS.Font = bigFont;
-            cmbCondition.Font = bigFont;
 
-            SendMessage(cmbType.Handle, CB_SETCUEBANNER, IntPtr.Zero, "Select device type");
-            SendMessage(cmbOS.Handle, CB_SETCUEBANNER, IntPtr.Zero, "Select operating system");
-            SendMessage(cmbCondition.Handle, CB_SETCUEBANNER, IntPtr.Zero, "Select condition");
+            // ———————————
+            // 2) Dark/Neon Styling for ComboBoxes
+            // ———————————
+
+            // ComboBoxes only support FlatStyle, BackColor, ForeColor, DropDownStyle, etc.
+            cmbType.FlatStyle = FlatStyle.Flat;
+            cmbType.BackColor = Color.White;
+            cmbType.ForeColor = Color.Black;
+            cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbOS.FlatStyle = FlatStyle.Flat;
+            cmbOS.BackColor = Color.White;
+            cmbOS.ForeColor = Color.Black;
+            cmbOS.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbCondition.FlatStyle = FlatStyle.Flat;
+            cmbCondition.BackColor = Color.White;
+            cmbCondition.ForeColor = Color.Black;
+            cmbCondition.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
+            // ———————————
+            // 3) Dark/Neon Styling for CheckBoxes
+            // ———————————
+            foreach (var cb in new[] {
+        cbUnder100, cb100to250, cb250to500, cbOver500,
+        cb16gb, cb32gb, cb64gb, cb128gb,
+        cb256gb, cb512gb, cb1tb, cb2tb })
+            {
+                cb.ForeColor = Color.Black;
+                cb.BackColor = Color.White;
+                cb.FlatStyle = FlatStyle.Standard;
+                cb.FlatAppearance.BorderSize = 1;
+                cb.FlatAppearance.BorderColor = Color.LightGray;
+                cb.FlatAppearance.CheckedBackColor = Color.White;
+                cb.FlatAppearance.MouseOverBackColor = Color.White;
+            }
+
+
+            // ———————————
+            // 4) Dark/Neon Styling for Buttons
+            // ———————————
+
+            // Search button (🔍)
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.BackColor = Color.White;
+            btnSearch.ForeColor = Color.Black;
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            
+
+            // Clear Filters
+            btnClearFilters.FlatStyle = FlatStyle.Flat;
+            btnClearFilters.BackColor = Color.White;
+            btnClearFilters.ForeColor = Color.Black;
+            btnClearFilters.FlatAppearance.BorderSize = 0;
+            btnClearFilters.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+
+            // Prev (◀)
+            btnPrev.FlatStyle = FlatStyle.Flat;
+            btnPrev.BackColor = Color.White;
+            btnPrev.ForeColor = Color.Black;
+            btnPrev.FlatAppearance.BorderColor = Color.FromArgb(0, 180, 220);
+            btnPrev.FlatAppearance.BorderSize = 1;
+            btnPrev.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrev.Text = "◀";
+            btnPrev.MouseEnter += (s, e) => btnPrev.BackColor = Color.White;
+            btnPrev.MouseLeave += (s, e) => btnPrev.BackColor = Color.White;
+
+            // Next (▶)
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.BackColor = Color.White;
+            btnNext.ForeColor = Color.Black;
+            btnNext.FlatAppearance.BorderColor = Color.FromArgb(0, 180, 220);
+            btnNext.FlatAppearance.BorderSize = 1;
+            btnNext.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnNext.Text = "▶";
+            btnNext.MouseEnter += (s, e) => btnNext.BackColor = Color.White;
+            btnNext.MouseLeave += (s, e) => btnNext.BackColor = Color.White;
+
+            // Page Label
+            lblPage.ForeColor = Color.Black;
+            lblPage.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+
+
+            // ———————————
+            // 5) Dark/Neon Styling for Search TextBox
+            // ———————————
+            txtSearch.BackColor = Color.White;
+            txtSearch.ForeColor = Color.White;
+            txtSearch.BorderStyle = BorderStyle.None;
         }
+
 
         // --- 3) First‐time setup: load from DB, display, and wire filters ---
         private void shopControl_Load(object sender, EventArgs e)
         {
-            _allDevices = LoadDevicesFromDb();   // pull every row into a List<Device>
+            flpDevices.BackColor = Color.White;
+            flpDevices.AutoScroll = true;         
+
+            _allDevices = LoadDevicesFromDb();
             _filteredDevices = _allDevices.ToList();
-            HookupFilters();   // wires up ApplyFilters
-            HookupPaging();    // wires up btnPrev/btnNext
-            DisplayPage(0);                   // live‐update when filter changes
+
+            // Populate Filter Boxes
+            cmbType.Items.Clear();
+            cmbType.Items.AddRange(
+                _allDevices.Select(d => d.DeviceType)
+                           .Where(s => !string.IsNullOrEmpty(s))
+                           .Distinct()
+                           .OrderBy(s => s)
+                           .ToArray()
+            );
+            cmbType.SelectedIndex = -1;
+
+            cmbOS.Items.Clear();
+            cmbOS.Items.AddRange(
+                _allDevices.Select(d => d.OS)
+                           .Where(s => !string.IsNullOrEmpty(s))
+                           .Distinct()
+                           .OrderBy(s => s)
+                           .ToArray()
+            );
+            cmbOS.SelectedIndex = -1;
+
+            cmbCondition.Items.Clear();
+            cmbCondition.Items.AddRange(
+                _allDevices.Select(d => d.Condition)
+                           .Where(s => !string.IsNullOrEmpty(s))
+                           .Distinct()
+                           .OrderBy(s => s)
+                           .ToArray()
+            );
+            cmbCondition.SelectedIndex = -1;
+
+            HookupFilters();
+            HookupPaging();
+            DisplayPage(0);
         }
+
 
         // --- 4) Data‐access: map each SqlDataReader row into a Device object ---
         private List<Device> LoadDevicesFromDb()
@@ -179,43 +305,66 @@ namespace MobileMarketplace_app
             var term = (txtSearch.Text ?? "").Trim();
 
             _filteredDevices = _allDevices
-              .Where(d =>
-                 // === your search logic ===
-                 string.IsNullOrEmpty(term)
-                 || new[] { d.Brand, d.Model, d.OS, d.DeviceType }
-                      .Any(field =>
-                          !string.IsNullOrEmpty(field)
-                          && field.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0
-                      )
-                 // === existing combo- and checkbox filters ===
-                 && (cmbType.SelectedIndex <= 0 || d.DeviceType == cmbType.Text)
-                 && (cmbOS.SelectedIndex <= 0 || d.OS == cmbOS.Text)
-                 && (cmbCondition.SelectedIndex <= 0 || d.Condition == cmbCondition.Text)
-                 && (
-                      (!cbUnder100.Checked && !cb100to250.Checked && !cb250to500.Checked && !cbOver500.Checked)
-                   || (cbUnder100.Checked && d.Price < 100M)
-                   || (cb100to250.Checked && d.Price >= 100M && d.Price <= 250M)
-                   || (cb250to500.Checked && d.Price > 250M && d.Price <= 500M)
-                   || (cbOver500.Checked && d.Price > 500M)
-                 )
-                 && (
-                      (!cb16gb.Checked && !cb32gb.Checked && !cb64gb.Checked &&
-                       !cb128gb.Checked && !cb256gb.Checked && !cb512gb.Checked &&
-                       !cb1tb.Checked && !cb2tb.Checked)
-                   || (cb16gb.Checked && d.Storage == "16GB")
-                   || (cb32gb.Checked && d.Storage == "32GB")
-                   || (cb64gb.Checked && d.Storage == "64GB")
-                   || (cb128gb.Checked && d.Storage == "128GB")
-                   || (cb256gb.Checked && d.Storage == "256GB")
-                   || (cb512gb.Checked && d.Storage == "512GB")
-                   || (cb1tb.Checked && d.Storage == "1TB")
-                   || (cb2tb.Checked && d.Storage == "2TB")
-                 )
-              )
-              .ToList();
+  .Where(d =>
+     // === text‐search logic (unchanged) ===
+     (string.IsNullOrEmpty(term)
+      || new[] { d.Brand, d.Model, d.OS, d.DeviceType }
+           .Any(field =>
+               !string.IsNullOrEmpty(field)
+               && field.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0
+           ))
+     // === Type filter (use case‐insensitive match too) ===
+     && (cmbType.SelectedIndex < 0
+         || string.Equals(
+              d.DeviceType?.Trim(),
+              cmbType.Text.Trim(),
+              StringComparison.OrdinalIgnoreCase
+            )
+        )
+     // === OS filter (updated to be case‐insensitive) ===
+     && (cmbOS.SelectedIndex < 0
+         || string.Equals(
+              d.OS?.Trim(),
+              cmbOS.Text.Trim(),
+              StringComparison.OrdinalIgnoreCase
+            )
+        )
+     // === Condition filter (same deal) ===
+     && (cmbCondition.SelectedIndex < 0
+         || string.Equals(
+              d.Condition?.Trim(),
+              cmbCondition.Text.Trim(),
+              StringComparison.OrdinalIgnoreCase
+            )
+        )
+     // === price checkboxes (unchanged) ===
+     && (
+          (!cbUnder100.Checked && !cb100to250.Checked && !cb250to500.Checked && !cbOver500.Checked)
+       || (cbUnder100.Checked && d.Price < 100M)
+       || (cb100to250.Checked && d.Price >= 100M && d.Price <= 250M)
+       || (cb250to500.Checked && d.Price > 250M && d.Price <= 500M)
+       || (cbOver500.Checked && d.Price > 500M)
+     )
+     // === storage checkboxes (unchanged) ===
+     && (
+          (!cb16gb.Checked && !cb32gb.Checked && !cb64gb.Checked &&
+           !cb128gb.Checked && !cb256gb.Checked && !cb512gb.Checked &&
+           !cb1tb.Checked && !cb2tb.Checked)
+       || (cb16gb.Checked && d.Storage?.Trim() == "16GB")
+       || (cb32gb.Checked && d.Storage?.Trim() == "32GB")
+       || (cb64gb.Checked && d.Storage?.Trim() == "64GB")
+       || (cb128gb.Checked && d.Storage?.Trim() == "128GB")
+       || (cb256gb.Checked && d.Storage?.Trim() == "256GB")
+       || (cb512gb.Checked && d.Storage?.Trim() == "512GB")
+       || (cb1tb.Checked && d.Storage?.Trim() == "1TB")
+       || (cb2tb.Checked && d.Storage?.Trim() == "2TB")
+     )
+  )
+  .ToList();
 
             DisplayPage(0);
         }
+
 
         private void btnClearFilters_Click(object sender, EventArgs e)
         {
